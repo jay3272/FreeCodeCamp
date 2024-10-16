@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">We would love your feedback!</p>
+
+    <form id="survey-form">
+        <!-- Name input -->
+        <label id="name-label" for="name">Name</label>
+        <input id="name" type="text" placeholder="Enter your name" required>
+
+        <!-- Email input -->
+        <label id="email-label" for="email">Email</label>
+        <input id="email" type="email" placeholder="Enter your email" required>
+
+        <!-- Number input -->
+        <label id="number-label" for="number">Age (optional)</label>
+        <input id="number" type="number" placeholder="Enter your age" min="10" max="100">
+
+        <!-- Dropdown -->
+        <label for="dropdown">Which option best describes your current role?</label>
+        <select id="dropdown">
+            <option value="student">Student</option>
+            <option value="professional">Professional</option>
+        </select>
+
+        <!-- Radio buttons -->
+        <label>Would you recommend us?</label>
+        <input type="radio" id="recommend-yes" name="recommend" value="yes">
+        <label for="recommend-yes">Yes</label>
+        <input type="radio" id="recommend-no" name="recommend" value="no">
+        <label for="recommend-no">No</label>
+
+        <!-- Checkboxes -->
+        <label>Select your preferences:</label>
+        <input type="checkbox" id="preference-email" value="email">
+        <label for="preference-email">Email notifications</label>
+        <input type="checkbox" id="preference-sms" value="sms">
+        <label for="preference-sms">SMS notifications</label>
+
+        <!-- Textarea -->
+        <label for="comments">Additional Comments</label>
+        <textarea id="comments" placeholder="Leave your comments here"></textarea>
+
+        <!-- Submit button -->
+        <button id="submit" type="submit">Submit</button>
+    </form>
+</body>
+</html>

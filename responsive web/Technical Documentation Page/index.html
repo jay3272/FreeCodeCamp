@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <header>JavaScript Documentation</header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Variables">Variables</a>
+        <a class="nav-link" href="#Functions">Functions</a>
+        <a class="nav-link" href="#Objects">Objects</a>
+        <a class="nav-link" href="#Arrays">Arrays</a>
+    </nav>
+
+    <!-- Main documentation -->
+    <main id="main-doc">
+        <!-- Section 1 -->
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>JavaScript is a versatile programming language commonly used in web development.</p>
+            <p>It allows for dynamic content, making webpages interactive and responsive to user actions.</p>
+            <p>JavaScript can run both in the browser and on the server side using environments such as Node.js.</p>
+            <code>console.log("Hello, world!");</code>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="main-section" id="Variables">
+            <header>Variables</header>
+            <p>Variables in JavaScript are used to store data values.</p>
+            <p>You can declare variables using <code>var</code>, <code>let</code>, or <code>const</code>.</p>
+            <code>let x = 10;</code>
+            <code>const y = 20;</code>
+            <ul>
+                <li><code>var</code> is function-scoped.</li>
+                <li><code>let</code> and <code>const</code> are block-scoped.</li>
+            </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="main-section" id="Functions">
+            <header>Functions</header>
+            <p>Functions allow you to encapsulate code and reuse it.</p>
+            <p>You can define a function using the <code>function</code> keyword.</p>
+            <code>function greet(name) {</code>
+            <code>  return "Hello " + name;</code>
+            <code>}</code>
+            <ul>
+                <li>Functions can take arguments.</li>
+                <li>They can return a value.</li>
+            </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="main-section" id="Objects">
+            <header>Objects</header>
+            <p>Objects in JavaScript are collections of key-value pairs.</p>
+            <p>They allow you to group related data and functions.</p>
+            <code>const person = { name: "John", age: 30 };</code>
+            <ul>
+                <li>Objects can have properties.</li>
+                <li>They can also have methods (functions).</li>
+            </ul>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="main-section" id="Arrays">
+            <header>Arrays</header>
+            <p>Arrays are used to store multiple values in a single variable.</p>
+            <p>Each value in an array has a numerical index, starting at 0.</p>
+            <code>const fruits = ["apple", "banana", "cherry"];</code>
+            <ul>
+                <li>Arrays can hold any type of data.</li>
+                <li>They are zero-indexed.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
