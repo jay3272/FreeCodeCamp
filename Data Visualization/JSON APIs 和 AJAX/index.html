@@ -1,22 +1,27 @@
 <script>
     document.addEventListener('DOMContentLoaded', function(){
       document.getElementById('getMessage').onclick = function(){
-        const req=new XMLHttpRequest();
-        req.open("GET",'/json/cats.json',true);
+        const req = new XMLHttpRequest();
+        req.open("GET",'/json/cats.json', true);
         req.send();
-        req.onload = function(){
-          const json = JSON.parse(req.responseText);
+        req.onload=function(){
+          let json = JSON.parse(req.responseText);
           let html = "";
-          json.forEach(function(val) {
-            html += "<div class = 'cat'>";
-            // 在這行下面添加代碼
-            html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
+          // 在這行下面添加代碼
+            json = json.filter(function(val) {
+              return (val.id !== 1);
+            });
   
-            // 在這行上面添加代碼
-            html += "</div><br>";
-          });
-          document.getElementsByClassName('message')[0].innerHTML=html;
-        };
+          // 在這行上面添加代碼
+           json.forEach(function(val) {
+             html += "<div class = 'cat'>"
+  
+             html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>"
+  
+             html += "</div>"
+           });
+           document.getElementsByClassName('message')[0].innerHTML = html;
+         };
        };
     });
   </script>
@@ -47,6 +52,7 @@
       border: 1px solid #0F5897;
     }
   </style>
+  
   <h1>Cat Photo Finder</h1>
   <p class="message box">
     The message will go here
