@@ -2,6 +2,7 @@
   .bar {
     width: 25px;
     height: 100px;
+    margin: 2px;
     display: inline-block;
     background-color: blue;
   }
@@ -10,14 +11,13 @@
     <script>
       const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
 
-      d3.select("body").selectAll("h2")
+      d3.select("body").selectAll("div")
         .data(dataset)
         .enter()
-        .append("h2")
-        .text((d) => (d + " USD"))
-        .attr("class", "bar");
+        .append("div")
+        .attr("class", "bar")
       // 在這行下面添加代碼
-      .style("height", (d) => d + "px");
+      .style("height", (d) => d * 10 + "px");
       // 在這行上面添加代碼
     </script>
   </body>
