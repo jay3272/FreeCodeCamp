@@ -15,8 +15,9 @@
         .enter()
         .append("h2")
         .text((d) => (d + " USD"))
-      // 在這行下面添加代碼
         .attr("class", "bar");
+      // 在這行下面添加代碼
+      .style("height", (d) => d + "px");
       // 在這行上面添加代碼
     </script>
   </body>
