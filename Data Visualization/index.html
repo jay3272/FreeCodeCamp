@@ -1,17 +1,14 @@
 <body>
   <script>
+    const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
     // 在這行下面添加代碼
 
-    const scale = d3.scaleLinear() // 在這裏創建軸
-    .domain([250, 500])
-    .range([10, 150]);
-    const output = scale(50); // 調用 scale，傳入一個參數
+    const output = d3.max(positionData, (d) => d[2]);
+      d3.select("body")
+      .append("h2")
+      .text(output) // 修改這一行
 
     // 在這行上面添加代碼
-
-    d3.select("body")
-      .append("h2")
-      .text(output);
 
   </script>
 </body>
