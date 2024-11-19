@@ -14,10 +14,11 @@
       .enter()
       .append("rect")
       .attr("x", (d, i) => i * 30)
-      // 在這行下面添加代碼
       .attr("y", (d, i) => h - 3 * d)
-      // 在這行上面添加代碼
       .attr("width", 25)
-      .attr("height", (d, i) => d * 3);
+      .attr("height", (d, i) => d * 3)
+      // 在這行下面添加代碼
+      .attr("fill", "navy");
+      // 在這行上面添加代碼
     </script>
   </body>
