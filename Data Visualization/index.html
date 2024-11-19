@@ -1,14 +1,42 @@
 <body>
   <script>
-    const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
+    const dataset = [
+                  [ 34,    78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,    411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,   333 ],
+                  [ 78,    320 ],
+                  [ 21,    123 ]
+                ];
+
+    const w = 500;
+    const h = 500;
+
+    // SVG 邊界和繪圖之間的填充
+    const padding = 30;
+
+    // 創建 x 和 y 軸
+
+    const xScale = d3.scaleLinear()
+                    .domain([0, d3.max(dataset, (d) => d[0])])
+                    .range([padding, w - padding]);
+
     // 在這行下面添加代碼
 
-    const output = d3.max(positionData, (d) => d[2]);
-      d3.select("body")
-      .append("h2")
-      .text(output) // 修改這一行
+    const yScale = d3.scaleLinear()
+      .domain([0, d3.max(dataset, (d) => d[1])])
+      .range([h - padding, padding]);
+
 
     // 在這行上面添加代碼
 
+    const output = yScale(411); // 返回 30
+    d3.select("body")
+      .append("h2")
+      .text(output)
   </script>
 </body>
