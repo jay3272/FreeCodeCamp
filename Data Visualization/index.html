@@ -23,8 +23,10 @@
       .attr("width", 25)
       .attr("height", (d, i) => d * 3)
       .attr("fill", "navy")
+      .attr("class", "bar")
       // 在這行下面添加代碼
-      .attr("class", "bar");
+      .append("title")
+      .text((d) => d);
       // 在這行上面添加代碼
       svg.selectAll("text")
       .data(dataset)
