@@ -35,9 +35,10 @@
        .enter()
        .append("text")
         // 在這行下面添加代碼
-        .atrtt("x", (d) => d[0] + 5)
-        .atrtt("y", (d) => h - d[1])
-        .text((d) => d[0] + ", " + d[1]);
+        .attr("x", (d) => d[0] + 5)
+       .attr("y", (d) => h - d[1])
+       .text((d) => (d[0] + ", " + d[1]))
+
        // 在這行上面添加代碼
 
   </script>
