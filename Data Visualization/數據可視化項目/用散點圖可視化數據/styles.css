@@ -1,0 +1,24 @@
+#scatterplot {
+    width: 800px;
+    height: 400px;
+  }
+  
+  .dot {
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 1px;
+  }
+  
+  #tooltip {
+    position: absolute;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .hidden {
+    visibility: hidden;
+  }
+  
