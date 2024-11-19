@@ -10,14 +10,15 @@
 <body>
     <script>
       const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+      
+      const w = 500;
+      const h = 100;
 
-      d3.select("body").selectAll("div")
-        .data(dataset)
-        .enter()
-        .append("div")
-        .attr("class", "bar")
+      const svg = d3.select("body")
       // 在這行下面添加代碼
-      .style("height", (d) => d * 10 + "px");
+      .append("svg")
+      .attr("width", w)
+      .attr("height", h);
       // 在這行上面添加代碼
     </script>
   </body>
