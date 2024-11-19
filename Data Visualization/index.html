@@ -15,10 +15,15 @@
       const h = 100;
 
       const svg = d3.select("body")
-      // 在這行下面添加代碼
       .append("svg")
       .attr("width", w)
-      .attr("height", h);
+      .attr("height", h)
+      // 在這行下面添加代碼
+      .append("rect")
+      .attr("width", 25)
+      .attr("height", 100)
+      .attr("x", 0)
+      .attr("y", 0);
       // 在這行上面添加代碼
     </script>
   </body>
