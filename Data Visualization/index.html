@@ -1,3 +1,11 @@
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
 <body>
     <script>
       const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
@@ -8,10 +16,7 @@
         .append("h2")
         .text((d) => (d + " USD"))
       // 在這行下面添加代碼
-        .style("color", (d) => {
-          if (d < 20) { return "red"; }
-          else { return "green"; }
-        });
+        .attr("class", "bar");
       // 在這行上面添加代碼
     </script>
   </body>
