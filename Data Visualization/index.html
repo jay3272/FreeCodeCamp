@@ -23,10 +23,13 @@
                   .attr("height", h);
 
     svg.selectAll("circle")
-       // 在這行下面添加代碼
         .data(dataset)
         .enter()
         .append("circle")
+        // 在這行下面添加代碼
+        .attr("cx", (d) => d[0])
+        .attr("cy", (d) => h - d[1])
+        .attr("r", 5);
        // 在這行上面添加代碼
 
   </script>
