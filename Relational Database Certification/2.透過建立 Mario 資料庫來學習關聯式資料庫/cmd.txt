@@ -34,9 +34,9 @@ UPDATE characters SET favorite_color='Orange' WHERE name='Daisy';
 ALTER TABLE characters ADD PRIMARY KEY(name);
 ALTER TABLE characters DROP CONSTRAINT characters_pkey;
 
+ALTER TABLE more_info ADD COLUMN more_info_id SERIAL;
 
-
-
+ALTER TABLE more_info ADD COLUMN character_id INT REFERENCES characters(character_id);
 
 
 

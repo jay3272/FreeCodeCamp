@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  #chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #chart {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #ccc;
+  }
+  
+  .bar {
+    fill: steelblue;
+  }
+  
+  .bar:hover {
+    fill: orange;
+  }
+  
+  #tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
