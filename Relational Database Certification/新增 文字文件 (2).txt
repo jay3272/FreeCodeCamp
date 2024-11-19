@@ -1,0 +1,9 @@
+開始取得免費證照FreeCodeCamp的訓練，
+這堂課程為Relational Database Certification
+
+請先建立好GitPod帳號
+
+Clicking the "hamburger" menu near the top left of the VSCode window,
+Going to the "View" menu,
+Clicking on the "Command Palette" option,
+and running the "CodeRoad: Start" command

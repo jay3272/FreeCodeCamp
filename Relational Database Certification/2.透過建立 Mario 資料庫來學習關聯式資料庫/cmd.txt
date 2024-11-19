@@ -1,0 +1,43 @@
+psql --username=freecodecamp --dbname=postgres
+
+postgres=> \l
+
+CREATE DATABASE first_database;
+
+\c second_database
+
+CREATE TABLE first_table();
+CREATE TABLE second_table();
+
+\d second_table
+
+ALTER TABLE second_table ADD COLUMN first_column INT;
+
+ALTER TABLE second_table ADD COLUMN id INT;
+ALTER TABLE second_table ADD COLUMN age INT;
+ALTER TABLE second_table DROP COLUMN first_column;
+ALTER TABLE second_table ADD COLUMN name VARCHAR(30);
+ALTER TABLE second_table RENAME COLUMN name TO username;
+
+INSERT INTO second_table(id, username) VALUES(1, 'Samus');
+SELECT * FROM second_table;
+
+INSERT INTO second_table(id, username) VALUES(2, 'Mario');
+INSERT INTO second_table(id, username) VALUES(3, 'Luigi');
+DELETE FROM second_table WHERE username='Luigi';
+
+ALTER DATABASE first_database RENAME TO mario_database;
+
+
+UPDATE characters SET favorite_color='Orange' WHERE name='Daisy';
+
+ALTER TABLE characters ADD PRIMARY KEY(name);
+ALTER TABLE characters DROP CONSTRAINT characters_pkey;
+
+
+
+
+
+
+
+
