@@ -13,11 +13,11 @@
       .data(dataset)
       .enter()
       .append("rect")
-      // 在這行下面添加代碼
       .attr("x", (d, i) => i * 30)
-      // 在這行上面添加代碼
       .attr("y", 0)
       .attr("width", 25)
-      .attr("height", 100);
+      .attr("height", (d, i) => d * 3);
+      // 在這行下面添加代碼
+      // 在這行上面添加代碼
     </script>
   </body>
