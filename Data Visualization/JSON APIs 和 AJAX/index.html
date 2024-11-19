@@ -2,10 +2,16 @@
     document.addEventListener('DOMContentLoaded', function(){
       document.getElementById('getMessage').onclick = function(){
         // 在這行下面添加代碼
-        document.getElementsByClassName('message')[0].textContent = "Here is the message";
+        req = new XMLHttpRequest();
+        req.open("GET",'/json/cats.json',true);
+        req.send();
+        req.onload=function(){
+          json = JSON.parse(req.responseText);
+          document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
+        };
   
         // 在這行上面添加代碼
-      }
+      };
     });
   </script>
   
