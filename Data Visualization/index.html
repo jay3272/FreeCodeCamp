@@ -2,7 +2,9 @@
   <script>
     // 在這行下面添加代碼
 
-    const scale = d3.scaleLinear(); // 在這裏創建軸
+    const scale = d3.scaleLinear() // 在這裏創建軸
+    .domain([250, 500])
+    .range([10, 150]);
     const output = scale(50); // 調用 scale，傳入一個參數
 
     // 在這行上面添加代碼
