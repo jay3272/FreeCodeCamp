@@ -8,7 +8,10 @@
         .append("h2")
         .text((d) => (d + " USD"))
       // 在這行下面添加代碼
-        .style('font-family','verdana');
+        .style("color", (d) => {
+          if (d < 20) { return "red"; }
+          else { return "green"; }
+        });
       // 在這行上面添加代碼
     </script>
   </body>
