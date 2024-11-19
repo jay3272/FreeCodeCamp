@@ -1,12 +1,13 @@
 <body>
-  <ul>
-    <li>Example</li>
-    <li>Example</li>
-    <li>Example</li>
-  </ul>
     <script>
+      const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
       // 在這行下面添加代碼
-      d3.selectAll("li").text("list item");
+      d3.select("body").selectAll("h2")
+        .data(dataset)
+        .enter()
+        .append("h2")
+        .text("New Title");
   
       // 在這行上面添加代碼
     </script>
