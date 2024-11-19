@@ -2,14 +2,23 @@
     document.addEventListener('DOMContentLoaded', function(){
       document.getElementById('getMessage').onclick = function(){
         const req = new XMLHttpRequest();
-        req.open("GET",'/json/cats.json', true);
+        req.open("GET",'/json/cats.json',true);
         req.send();
-        req.onload=function(){
+        req.onload = function(){
           const json = JSON.parse(req.responseText);
-          document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
+          let html = "";
           // 在這行下面添加代碼
-          console.log(json[2].codeNames[1]);
+            json.forEach(function(val) {
+              const keys = Object.keys(val);
+              html += "<div class = 'cat'>";
+              keys.forEach(function(key) {
+                html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+              });
+              html += "</div><br>";
+            });
+  
           // 在這行上面添加代碼
+          document.getElementsByClassName('message')[0].innerHTML = html;
         };
       };
     });
