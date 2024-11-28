@@ -1,41 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class MyComponent extends React.Component {
+class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibility : false
+      count: 0
     };
-    this.toggleVisibility = this.toggleVisibility.bind(this);
+    this.increment = this.increment.bind(this);
+  this.decrement = this.decrement.bind(this);
+  this.reset = this.reset.bind(this);
   }
-  toggleVisibility(){
-    this.setState(state => ({
-      visibility: !state.visibility
+  reset(){
+    this.setState(state =>({
+      count: 0
     }));
   }
+  increment(){
+    this.setState(state =>({
+      count: state.count+1
+    }));
+  }
+  decrement(){
+    this.setState(state =>({
+      count: state.count-1
+    }));
+  }
+
   render() {
-    if (this.state.visibility){
-      return (
-        <div>
-          <button onClick={this.toggleVisibility}>Click Me</button>
-          <h1>Now you see me!</h1>
-        </div>
-      );
-     } else {
-      return(
+    return (
       <div>
-        <button onClick={this.toggleVisibility}>Click Me</button>
+        <button className='inc' onClick={this.increment}>Increment!</button>
+        <button className='dec' onClick={this.decrement}>Decrement!</button>
+        <button className='reset' onClick={this.reset}>Reset</button>
+        <h1>Current Count: {this.state.count}</h1>
       </div>
-     );
-     }
+    );
   }
 };
 
 function Fcc() {
   return (
     <div>
-      <MyComponent />
+      <Counter />
     </div>
   );
 }
