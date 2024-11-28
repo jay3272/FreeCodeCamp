@@ -1,19 +1,17 @@
 import React from 'react';
 
-const JSX = (
-  <div className='myDiv'>
-    
-    <h2>Welcome to React!</h2> <br />
-    <p>Be sure to close all tags!</p>
-    <hr />
-        
-  </div>
+const MyComponent = function() {  
+ return(
+    <div>Completed challenge!</div>
 );
+}
 
 function Fcc() {
   return (
     <div>
-      {JSX}
+      <h1>Welcome to the FCC Homepage!</h1>
+      {/* 渲染 MyComponent */}
+      <MyComponent />
     </div>
   );
 }
