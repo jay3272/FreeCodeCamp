@@ -5,13 +5,13 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name : "Initial State"
+      text : "Hello"
     };
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(){
     this.setState({
-      name:'React Rock!'
+      text:'You clicked!'
     })
   }
   render() {
@@ -19,7 +19,7 @@ class MyComponent extends React.Component {
     return (
       <div>
         <button onClick={this.handleClick}>Clich Me</button>
-        <h1>{this.state.name}</h1>
+        <h1>{this.state.text}</h1>
       </div>
     );
   }
