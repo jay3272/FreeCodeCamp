@@ -1,6 +1,14 @@
 import React from 'react';
 
-const JSX = <h1>Hello JSX!</h1>;
+const JSX = <div>
+<h1>Heading.</h1>
+<p>Paragraph</p>
+<ul>
+<li>Coffee</li>
+<li>Tea</li>
+<li>Milk</li>
+</ul>
+</div>;  ;
 
 function Fcc() {
   return (
