@@ -1,13 +1,22 @@
 import React from 'react';
 
-class MyComponent extends React.Component {
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-return (
+    return (
       <div>
-       <h1>Hello React!</h1>
+        <h1>I am the parent</h1>
+        <ChildComponent />
       </div>
     );
   }
@@ -16,8 +25,7 @@ return (
 function Fcc() {
   return (
     <div>
-      {/* 渲染 MyComponent */}
-      <MyComponent />
+      <ParentComponent />
     </div>
   );
 }
