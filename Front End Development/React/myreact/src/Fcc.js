@@ -1,33 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class CampSite extends React.Component {
+class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      firstName : "Jay"
+    }
   }
   render() {
     return (
       <div>
-        <Camper name={this.props.name}/>
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }
 };
 
-const Camper = props => <p>{props.name}</p>;
-
-Camper.defaultProps = {
-  name: "CamperBot"
-};
-
-Camper.propTypes = {
-  name: PropTypes.string.isRequired
-};
-
 function Fcc() {
   return (
     <div>
-      <CampSite />
+      <StatefulComponent />
     </div>
   );
 }
