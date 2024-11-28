@@ -6,6 +6,10 @@ const Items = (props) => {
   )
 };
 
+Items.propTypes = {
+  quantity: PropTypes.number.isRequired
+};
+
 Items.defaultProps = {
   quantity: 0
 };
