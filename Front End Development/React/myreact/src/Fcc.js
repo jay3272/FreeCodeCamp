@@ -1,9 +1,9 @@
 import React from 'react';
 
-const TypesOfFruit = () => {
+const NonCitrus = () => {
   return (
     <div>
-      <h2>Fruits:</h2>
+      <h3>Non-Citrus:</h3>
       <ul>
         <li>Apples</li>
         <li>Blueberries</li>
@@ -14,13 +14,43 @@ const TypesOfFruit = () => {
   );
 };
 
-const Fruits = () => {
+const Citrus = () => {
   return (
     <div>
-      <TypesOfFruit/>
+      <h3>Citrus:</h3>
+      <ul>
+        <li>Lemon</li>
+        <li>Lime</li>
+        <li>Orange</li>
+        <li>Grapefruit</li>
+      </ul>
     </div>
   );
 };
+
+const Vegetables = () => {
+  return (
+    <div>
+      <h2>Vegetables:</h2>
+      <ul>
+        <li>Brussel Sprouts</li>
+        <li>Broccoli</li>
+        <li>Squash</li>
+      </ul>
+    </div>
+  );
+};
+
+const Fruits = () => {
+  return (
+    <div>
+      <h2>Fruits:</h2>
+        <NonCitrus />
+        <Citrus />
+    </div>
+  );
+};
+
 class TypesOfFood extends React.Component {
   constructor(props) {
     super(props);
@@ -31,6 +61,7 @@ class TypesOfFood extends React.Component {
       <div>
         <h1>Types of Food:</h1>
         <Fruits/>
+        <Vegetables />
       </div>
     );
   }
