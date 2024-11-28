@@ -1,14 +1,10 @@
 import React from 'react';
 
-const JSX = <div>
-<h1>Heading.</h1>
-<p>Paragraph</p>
-<ul>
-<li>Coffee</li>
-<li>Tea</li>
-<li>Milk</li>
-</ul>
-</div>;  ;
+const JSX = (
+  <div className='myDiv'>
+    <h1>Add a class to this div</h1>
+  </div>
+);
 
 function Fcc() {
   return (
