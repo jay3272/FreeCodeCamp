@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class ControlledInput extends React.Component {
+class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
+      input: '',
+      submit: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   handleChange(event){
@@ -16,12 +18,23 @@ class ControlledInput extends React.Component {
     })
   }
 
+  handleSubmit(event){
+    event.preventDefault()
+    this.setState({
+      submit: this.state.input
+    })
+  }
+
   render() {
     return (
       <div>
-        <input value={this.state.input} onChange={this.handleChange}/>
-        <h4>Controlled Input</h4>
-        <p>{this.state.input}</p>
+        <form onSubmit={this.handleSubmit}>
+          <input 
+          value={this.state.input}
+          onChange={this.handleChange} />
+          <button type='submit'>Submit!</button>
+        </form>
+        <h1>{this.state.submit}</h1>
       </div>
     );
   }
@@ -30,7 +43,7 @@ class ControlledInput extends React.Component {
 function Fcc() {
   return (
     <div>
-      <ControlledInput />
+      <MyForm />
     </div>
   );
 }
