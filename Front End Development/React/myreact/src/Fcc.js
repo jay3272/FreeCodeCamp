@@ -1,15 +1,22 @@
 import React from 'react';
 
-const ShoppingCart = (props) => {
+const Items = (props) => {
   return (
-    <div>
-      <h1>Shopping Cart Component</h1>
-    </div>
+    <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
   )
 };
 
-ShoppingCart.defaultProps = {
-  items: 0
+Items.defaultProps = {
+  quantity: 0
+};
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items quantity={10}/>
+  }
 };
 
 function Fcc() {
