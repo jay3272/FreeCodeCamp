@@ -9,9 +9,10 @@ class StatefulComponent extends React.Component {
     }
   }
   render() {
+    const firstName = this.state.firstName;
     return (
       <div>
-        <h1>{this.state.firstName}</h1>
+        <h1>{firstName}</h1>
       </div>
     );
   }
