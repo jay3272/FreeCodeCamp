@@ -1,18 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class StatefulComponent extends React.Component {
+class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName : "Jay"
-    }
+      name : "Initial State"
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(){
+    this.setState({
+      name:'React Rock!'
+    })
   }
   render() {
     const firstName = this.state.firstName;
     return (
       <div>
-        <h1>{firstName}</h1>
+        <button onClick={this.handleClick}>Clich Me</button>
+        <h1>{this.state.name}</h1>
       </div>
     );
   }
@@ -21,7 +28,7 @@ class StatefulComponent extends React.Component {
 function Fcc() {
   return (
     <div>
-      <StatefulComponent />
+      <MyComponent />
     </div>
   );
 }
