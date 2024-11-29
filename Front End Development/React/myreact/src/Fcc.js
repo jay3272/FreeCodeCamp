@@ -14,20 +14,12 @@ class MMyComponent extends React.Component {
     }))
   }
   render(){
-    if(this.state.display){
       return(
         <div>
           <button onClick={this.toggleDisplay}>Toggle Display</button>
-          <h1>Displayed</h1>
+          {this.state.display && <h1>Displayed</h1>}
         </div>
       )
-    } else {
-      return (
-        <div>
-        <button onClick={this.toggleDisplay}>Toggle Display</button>
-      </div>
-      )
-    }
   }
 }
 
