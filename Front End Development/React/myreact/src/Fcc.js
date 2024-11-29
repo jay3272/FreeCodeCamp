@@ -1,32 +1,53 @@
 import React from 'react';
 
-const frontEndFrameworks = [
-  'React',
-  'Angular',
-  'Ember',
-  'Knockout',
-  'Backbone',
-  'Vue'
-];
-
-function Frameworks() {
-  const renderFrameworks = frontEndFrameworks.map((item) =>
-  <li key={item}>{item}</li>
-); // 修改這一行
-  return (
-    <div>
-      <h1>Popular Front End JavaScript Frameworks</h1>
-      <ul>
-        {renderFrameworks}
-      </ul>
-    </div>
-  );
-};
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [
+        {
+          username: 'Jeff',
+          online: true
+        },
+        {
+          username: 'Alan',
+          online: false
+        },
+        {
+          username: 'Mary',
+          online: true
+        },
+        {
+          username: 'Jim',
+          online: false
+        },
+        {
+          username: 'Sara',
+          online: true
+        },
+        {
+          username: 'Laura',
+          online: true
+        }
+      ]
+    };
+  }
+  render() {
+    const usersOnline = this.state.users.filter(user => user.online === true); // change code here
+    const renderOnline = usersOnline.map(user => <li key={user.username}>{user.username}</li>); // change code here
+     return (
+      <div>
+        <h1>Current Online Users:</h1>
+        <ul>{renderOnline}</ul>
+      </div>
+    );
+  }
+}
 
 function Fcc() {
   return (
     <div>
-      <Frameworks />
+      <MyComponent />
     </div>
   );
 }
