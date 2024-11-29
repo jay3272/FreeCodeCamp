@@ -1,44 +1,33 @@
 import React from 'react';
+import { createStore } from 'redux';
+
+const reducer = (state = 5) => {
+  return state;
+}
+
+// 可從 Redux 對象獲得 Redux 方法
+// 例如：Redux.createStore()
+// 在這裏定義 store here：
+const store = Redux.createStore(reducer);
 
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [
-        {
-          username: 'Jeff',
-          online: true
-        },
-        {
-          username: 'Alan',
-          online: false
-        },
-        {
-          username: 'Mary',
-          online: true
-        },
-        {
-          username: 'Jim',
-          online: false
-        },
-        {
-          username: 'Sara',
-          online: true
-        },
-        {
-          username: 'Laura',
-          online: true
-        }
-      ]
+      reduxState: store.getState(),
     };
+    this.unsubscribe = store.subscribe(() => {
+      this.setState({ reduxState: store.getState() });
+    });
   }
-  render() {
-    const usersOnline = this.state.users.filter(user => user.online === true); // change code here
-    const renderOnline = usersOnline.map(user => <li key={user.username}>{user.username}</li>); // change code here
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+  render() {    
      return (
       <div>
-        <h1>Current Online Users:</h1>
-        <ul>{renderOnline}</ul>
+        <h1>Redux State：{this.state.reduxState}</h1>
       </div>
     );
   }
