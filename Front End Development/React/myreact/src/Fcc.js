@@ -1,52 +1,45 @@
 import React from 'react';
 
-class Results extends React.Component {
-  constructor(props){
-    super(props);
-  }  
-render() {
-  return (
-    <h1>
-      {this.props.fiftyFifty ? "You Win!" : "You Lose!"}
-    </h1>
-  )
-}
-}
-
-class GameOfChance extends React.Component {
+class GateKeeper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 1
-    }
-    this.handleClick = this.handleClick.bind(this)
+      input: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
-  
-  handleClick() {
-    this.setState(prevState => {
-      return {
-        counter: prevState.counter + 1
-      }
-    })
+  handleChange(event) {
+    this.setState({ input: event.target.value })
   }
-
   render() {
-    const expression = Math.random() >= 0.5;
+    let inputStyle = {
+      border: '1px solid black'
+    };
+    // 修改這行下面的代碼
+    if (this.state.input.length > 15) {
+      inputStyle = {
+        border: '3px solid red'
+      };
+    }
+    // 修改這行上面的代碼
     return (
       <div>
-        <button onClick={this.handleClick}>Play Again</button>
-        <Results fiftyFifty={expression} />
-        <p>{'Turn: ' + this.state.counter}</p>
+        <h3>Don't Type Too Much:</h3>
+        <input
+          type="text"
+          style={inputStyle}
+          value={this.state.input}
+          onChange={this.handleChange} />
       </div>
-    )
+    );
   }
-}
+};
 
 
 function Fcc() {
   return (
     <div>
-      <GameOfChance />
+      <GateKeeper />
     </div>
   );
 }
