@@ -5,6 +5,12 @@ const reducer = (state = 5) => {
   return state;
 }
 
+// 可從 Redux 對象獲得 Redux 方法
+// 例如：Redux.createStore()
+// 在這裏定義 store here：
+const store = createStore(reducer);
+let currentState = store.getState();
+
 // Define an action here:
 let action={
   type: 'LOGIN'
@@ -13,11 +19,10 @@ let action={
 function actionCreator() {
   return action;
 }
-// 可從 Redux 對象獲得 Redux 方法
-// 例如：Redux.createStore()
-// 在這裏定義 store here：
-const store = createStore(reducer);
-let currentState = store.getState();
+
+store.dispatch(loginAction());
+
+
 
 class MyComponent extends React.Component {
   constructor(props) {
