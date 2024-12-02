@@ -9,12 +9,13 @@ const reducer = (state = 5) => {
 // 例如：Redux.createStore()
 // 在這裏定義 store here：
 const store = createStore(reducer);
+let currentState = store.getState();
 
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reduxState: store.getState(),
+      reduxState: currentState,
     };
     this.unsubscribe = store.subscribe(() => {
       this.setState({ reduxState: store.getState() });
