@@ -10,6 +10,9 @@ let action={
   type: 'LOGIN'
 }
 
+function actionCreator() {
+  return action;
+}
 // 可從 Redux 對象獲得 Redux 方法
 // 例如：Redux.createStore()
 // 在這裏定義 store here：
